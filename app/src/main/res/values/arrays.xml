@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="timer_actions">
+        <item>Calculate remaining time</item>
+        <item>Calculate elapsed time</item>
+    </string-array>
+</resources>

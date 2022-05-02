@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@android:style/Theme.Light">
+        <item name="android:windowTitleBackgroundStyle">@style/AppTheme.TitleBarBackground</item>
+        <item name="android:windowTitleStyle">@style/AppTheme.TitleBarText</item>
+        <item name="android:windowTitleSize">32dp</item>
+    </style>
+
+    <style name="AppTheme.TitleBarBackground">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.TitleBarText">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:shadowColor">#00000000</item>
+    </style>
+
+
+</resources>
