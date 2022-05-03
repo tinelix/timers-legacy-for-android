@@ -28,4 +28,6 @@
     <string name="create_btn">Create timer</string>
     <string name="dt_parse_error">An error occurred while trying to format the date and time. Changes will not be saved.</string>
     <string name="manage_btn">Manage</string>
+    <string name="delete_timer_title">Deletion confirmation</string>
+    <string name="delete_timer_question">Delete timer?</string>
 </resources>

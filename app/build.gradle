@@ -7,8 +7,8 @@ android {
         applicationId "dev.tinelix.timers.legacy"
         minSdkVersion 4
         targetSdkVersion 21
-        versionCode 1
-        versionName '0.0.1-alpha-20220205'
+        versionCode 2
+        versionName '0.0.2-alpha-20220503'
     }
     buildTypes {
         release {

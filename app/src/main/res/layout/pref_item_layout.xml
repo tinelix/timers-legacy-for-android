@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Item title"
-            android:textColor="?android:attr/textColorPrimary"
+            android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <TextView
@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Item subtitle"
-            android:textColor="?android:attr/textColorSecondary"
+            android:textColor="@color/black_transparent80"
             android:visibility="visible" />
     </LinearLayout>
 

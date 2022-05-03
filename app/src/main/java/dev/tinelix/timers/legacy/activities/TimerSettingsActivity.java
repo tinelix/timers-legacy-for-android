@@ -66,7 +66,7 @@ public class TimerSettingsActivity extends PreferenceActivity {
                 }
             });
             final Preference timerActionDate = findPreference("timerActionDate");
-            if(getSharedPreferences(old_timer_name, 0).getString("countAction", "").contains("calculateRemainingTime")) {
+            if(getSharedPreferences(old_timer_name, 0).getString("timerAction", "").contains("calculateRemainingTime")) {
                 timerActionDate.setTitle(getResources().getString(R.string.end_date));
                 timer_action.setSummary(timer_actions[0]);
             } else {

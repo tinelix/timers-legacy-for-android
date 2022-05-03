@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -74,6 +75,10 @@ public class MainActivity extends Activity {
             }
         };
         appendTimerItems();
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+            ColorDrawable black_transparent_divider = new ColorDrawable(this.getResources().getColor(R.color.black_transparent40));
+            timersListView.setDivider(black_transparent_divider);
+        }
     }
 
     private void appendTimerItems() {
@@ -232,14 +237,30 @@ public class MainActivity extends Activity {
     }
 
     public void deleteTimer(int position) {
-        TimerItem timerItem = timersList.get(position);
-        try {
-            String profile_path = "/data/data/" + getPackageName() + "/shared_prefs/" + timerItem.name + ".xml";
-            File file = new File(profile_path);
-            file.delete();
-            appendTimerItems();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
+        final TimerItem timerItem = timersList.get(position);
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle(R.string.delete_timer_title);
+        builder.setMessage(R.string.delete_timer_question);
+        builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                try {
+                    String profile_path = "/data/data/" + getPackageName() + "/shared_prefs/" + timerItem.name + ".xml";
+                    File file = new File(profile_path);
+                    file.delete();
+                    appendTimerItems();
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+            }
+        });
+        builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

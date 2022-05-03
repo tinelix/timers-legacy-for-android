@@ -27,4 +27,6 @@
     <string name="create_btn">Создать таймер</string>
     <string name="dt_parse_error">При попытке форматирования даты и времени произошла ошибка. Изменения не сохраняться не будут.</string>
     <string name="manage_btn">Управление</string>
+    <string name="delete_timer_title">Подтверждение удаления</string>
+    <string name="delete_timer_question">Удалить таймер?</string>
 </resources>

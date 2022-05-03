@@ -19,7 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_launcher"
+                android:src="@drawable/full_application_icon_72px"
                 android:layout_marginBottom="8dp" />
 
             <LinearLayout

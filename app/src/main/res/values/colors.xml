@@ -5,4 +5,6 @@
     <color name="colorAccent">#dd6700</color>
     <color name="colorAccentTransparent">#88dd6700</color>
     <color name="holo_red_light">#ff4444</color>
+    <color name="black_transparent80">#95000000</color>
+    <color name="black_transparent40">#47000000</color>
 </resources>
