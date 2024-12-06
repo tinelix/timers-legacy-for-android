@@ -2,10 +2,12 @@
 
 buildscript {
     repositories {
-        jcenter()
+        maven { url "https://mvnrepository.com/artifact" }
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        //noinspection GradleDependency
+        classpath 'com.android.tools.build:gradle:2.3.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -14,6 +16,16 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven {
+            url "https://maven.vriska.ru/"
+            credentials {
+                username "gradle"
+                password "gradle"
+            }
+        }
     }
 }
