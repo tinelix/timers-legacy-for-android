@@ -44,7 +44,7 @@ public class TimerSettingsActivity extends PreferenceActivity {
             old_timer_name = (String) savedInstanceState.getSerializable("timerName");
             package_name = (String) savedInstanceState.getSerializable("packageName");
         }
-        setContentView(R.layout.settings_layout);
+        setContentView(R.layout.layout_settings);
         addPreferencesFromResource(R.xml.timer_settings);
         if(old_timer_name != null) {
             Preference timer_name = findPreference("timer_name");
@@ -92,7 +92,7 @@ public class TimerSettingsActivity extends PreferenceActivity {
             final boolean[] isInvalidDate = new boolean[1];
             final boolean[] isInvalidTime = new boolean[1];
             AlertDialog.Builder builder = new AlertDialog.Builder(TimerSettingsActivity.this);
-            final View view = inflater.inflate(R.layout.datetime_picker_layout, null);
+            final View view = inflater.inflate(R.layout.layout_datetime_picker, null);
             final EditText date_edit = (EditText) view.findViewById(R.id.date_edit);
             final EditText time_edit = (EditText) view.findViewById(R.id.time_edit);
             final TextView error_date_text = (TextView) view.findViewById(R.id.error_date_text);
@@ -382,7 +382,7 @@ public class TimerSettingsActivity extends PreferenceActivity {
         if (action.equals("set_timer_name")) {
             LayoutInflater inflater = getLayoutInflater();
             AlertDialog.Builder builder = new AlertDialog.Builder(TimerSettingsActivity.this);
-            final View view = inflater.inflate(R.layout.enter_text_layout, null);
+            final View view = inflater.inflate(R.layout.layout_enter_text, null);
             builder.setView(view);
             final EditText value_edit = (EditText) view.findViewById(R.id.enter_value);
             final TextView error_text = (TextView) view.findViewById(R.id.error_text);

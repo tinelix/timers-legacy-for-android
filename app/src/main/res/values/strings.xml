@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">Tinelix Timers</string>
-    <string name="empty_list_title" >There\'s nothing there</string>
+    <string name="empty_list_title">There\'s nothing there</string>
     <string name="empty_list_text">But you can create at least one timer.</string>
     <string name="value">Value</string>
     <string name="name">Name</string>
@@ -18,6 +18,8 @@
     <string name="time_at">%1$s at %2$s</string>
     <string name="days_counter_remaining">%1$d d. %2$d h. %3$d min. %4$d s. remaining</string>
     <string name="days_counter_elapsed">%1$d d. %2$d h. %3$d min. %4$d s. elapsed</string>
+    <string name="days_counter_remaining_start_of">remaining</string>
+    <string name="days_counter_elapsed_start_of">elapsed</string>
     <string name="days_counter_over">Time is over</string>
     <string name="about_application_item">About application</string>
     <string name="timer_editor_title">Timer editor</string>
@@ -30,4 +32,8 @@
     <string name="manage_btn">Manage</string>
     <string name="delete_timer_title">Deletion confirmation</string>
     <string name="delete_timer_question">Delete timer?</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="choose_timer_for_widget">You need to choose a timer from the list to create a widget.</string>
 </resources>

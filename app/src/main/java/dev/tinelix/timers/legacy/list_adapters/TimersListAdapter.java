@@ -20,6 +20,7 @@ import java.util.concurrent.TimeUnit;
 import dev.tinelix.timers.legacy.R;
 import dev.tinelix.timers.legacy.activities.MainActivity;
 import dev.tinelix.timers.legacy.list_items.TimerItem;
+import dev.tinelix.timers.legacy.utils.TimersManager;
 
 public class TimersListAdapter extends BaseAdapter {
 
@@ -52,7 +53,7 @@ public class TimersListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
         if (view == null) {
-            view = inflater.inflate(R.layout.timer_item_layout, parent, false);
+            view = inflater.inflate(R.layout.layout_timer_item, parent, false);
         }
         Holder holder = new Holder(view);
         holder.bind(position);
@@ -103,7 +104,7 @@ public class TimersListAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View view) {
                     if(ctx.getClass().getSimpleName().equals("MainActivity")) {
-                        ((MainActivity) ctx).deleteTimer(position);
+                        TimersManager.deleteTimer(ctx, items, position);
                     }
                 }
             });
@@ -130,7 +131,7 @@ public class TimersListAdapter extends BaseAdapter {
                         item_time_counter.setText(ctx.getResources().getString(R.string.days_counter_over));
                     }
                 } else {
-                    if (elapsed_days > 0) {
+                    if (elapsed_sec > 0) {
                         item_time_counter.setText(ctx.getResources().getString(R.string.days_counter_elapsed, elapsed_days, timer_date.getHours(), timer_date.getMinutes(), timer_date.getSeconds()));
                     } else {
                         item_time_counter.setText(ctx.getResources().getString(R.string.days_counter_over));

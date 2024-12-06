@@ -3,11 +3,11 @@
     package="dev.tinelix.timers.legacy">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme"
-        android:name="dev.tinelix.timers.legacy.App">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name">
@@ -19,11 +19,25 @@
         </activity>
         <activity
             android:name=".activities.AboutApplicationActivity"
-            android:label="@string/about_application_item">
-        </activity>
+            android:label="@string/about_application_item" />
         <activity
             android:name=".activities.TimerSettingsActivity"
-            android:label="@string/timer_editor_title">
+            android:label="@string/timer_editor_title" />
+
+        <receiver android:name=".widgets.TimerWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/timer_widget_info" />
+        </receiver>
+
+        <activity android:name=".activities.TimerWidgetSettingsActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
         </activity>
     </application>
 

@@ -5,19 +5,19 @@
     <PreferenceCategory
         android:layout_width="match_parent"
         android:title="@string/main_settings_category"
-        android:layout="@layout/pref_category_layout">
+        android:layout="@layout/layout_pref_category">
     </PreferenceCategory>
     <Preference
         android:key="timer_name"
-        android:layout="@layout/pref_item_layout"
+        android:layout="@layout/layout_pref_item"
         android:title="@string/timer_name" />
     <Preference
         android:key="timer_action"
-        android:layout="@layout/pref_item_layout"
+        android:layout="@layout/layout_pref_item"
         android:title="@string/timer_action_pref" />
     <Preference
         android:key="timerActionDate"
-        android:layout="@layout/pref_item_layout"
+        android:layout="@layout/layout_pref_item"
         android:title="@string/start_date" />
 
 </PreferenceScreen>

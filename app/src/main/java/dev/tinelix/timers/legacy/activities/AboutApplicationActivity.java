@@ -16,7 +16,7 @@ public class AboutApplicationActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.about_app_layout);
+        setContentView(R.layout.layout_about_app);
         Button repoButton = (Button) findViewById(R.id.repo_button);
         Button websiteButton = (Button) findViewById(R.id.website_button);
         repoButton.setOnClickListener(new View.OnClickListener() {

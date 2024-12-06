@@ -18,6 +18,8 @@
     <string name="time_at">%1$s в %2$s</string>
     <string name="days_counter_remaining">Осталось %1$d дн. %2$d ч. %3$d мин. %4$d сек.</string>
     <string name="days_counter_elapsed">Прошло %1$d дн. %2$d ч. %3$d мин. %4$d сек.</string>
+    <string name="days_counter_remaining_start_of">осталось</string>
+    <string name="days_counter_elapsed_start_of">прошло</string>
     <string name="days_counter_over">Время закончилось</string>
     <string name="about_application_item">О приложении</string>
     <string name="timer_editor_title">Редактор таймера</string>
@@ -29,4 +31,5 @@
     <string name="manage_btn">Управление</string>
     <string name="delete_timer_title">Подтверждение удаления</string>
     <string name="delete_timer_question">Удалить таймер?</string>
+    <string name="choose_timer_for_widget">Вам нужно выбрать таймер из списка для создания виджета.</string>
 </resources>
