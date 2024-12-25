@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "dev.tinelix.timers.legacy"
-        minSdkVersion 4
-        targetSdkVersion 23
+        minSdkVersion 7
+        targetSdkVersion 25
         versionCode 2
-        versionName '0.0.3-alpha-20220612'
+        versionName '0.0.3-alpha-20241223'
     }
     buildTypes {
         release {
@@ -22,4 +22,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    //noinspection GradleDependency,GradleCompatible
+    compile 'com.android.support:support-v4:24.0.0'
+    //noinspection GradleDependency,GradleCompatible
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.seppius.plurals:android-i18n-plurals:1.1'
 }

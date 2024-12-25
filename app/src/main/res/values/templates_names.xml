@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Templates names !-->
+    <string name="new_year">New Year</string>
+    <string name="beginning_of_winter">Beginning of winter</string>
+    <string name="beginning_of_spring">Beginning of spring</string>
+    <string name="beginning_of_summer">Beginning of summer</string>
+    <string name="beginning_of_autumn">Beginning of autumn</string>
+    <string name="beginning_of_year">Beginning of year</string>
+</resources>

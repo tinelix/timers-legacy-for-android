@@ -8,11 +8,14 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.widget.RemoteViews;
 
 import dev.tinelix.timers.legacy.Global;
 import dev.tinelix.timers.legacy.R;
 import dev.tinelix.timers.legacy.activities.TimerWidgetSettingsActivity;
+import dev.tinelix.timers.legacy.ui.fonts.StemFont;
+import dev.tinelix.timers.legacy.ui.fonts.TahomaFont;
 import dev.tinelix.timers.legacy.ui.views.AdaptiveTextView;
 import dev.tinelix.timers.legacy.utils.TimersManager;
 
@@ -28,32 +31,79 @@ public class TimerWidget extends AppWidgetProvider {
         CharSequence widgetText = TimerWidgetSettingsActivity.loadTitlePref(context, appWidgetId);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_timer);
-        views.setTextViewText(R.id.widget_timer_title, widgetText);
+
         long days = TimersManager.getDaysFromTimer(context, (String) widgetText);
 
         float dp = context.getResources().getDisplayMetrics().scaledDensity;
 
         Bitmap bmp = Bitmap.createBitmap(
-                (int) (228.0 * dp), (int) (68.0 * dp), Bitmap.Config.ARGB_8888
+                (int) (311.0 * dp), (int) (72.0 * dp), Bitmap.Config.ARGB_8888
         );
         Canvas canvas = new Canvas(bmp);
-        Paint paint = new Paint();
-        paint.setColor(Color.parseColor("#6affffff"));
-        paint.setTextSize(70);
-        paint.setAntiAlias(true);
+
+        Typeface tf_stem_medium = StemFont.getFont(context, 500);
+        Typeface tf_stem_bold = StemFont.getFont(context, 700);
+
+        Typeface tf_tahoma_bold = TahomaFont.getFont(context, 700);
+
+        Paint title_paint = new Paint();
+
+        title_paint.setColor(Color.parseColor("#ffffff"));
+        title_paint.setTextSize(22);
+        title_paint.setAntiAlias(true);
+        title_paint.setTypeface(tf_stem_medium);
+
+        if (widgetText.equals(context.getResources().getString(R.string.new_year))){
+            canvas.drawText(
+                    context.getResources().getString(R.string.new_year_widget_title),
+                    26, 30, title_paint
+            );
+        } else {
+            if(widgetText.length() > 27) {
+                canvas.drawText(
+                        widgetText.toString().substring(0, 27) + "...",
+                        26, 30, title_paint
+                );
+            } else {
+                canvas.drawText(
+                        widgetText.toString(),
+                        26, 30, title_paint
+                );
+            }
+        }
+
+        Paint counter_paint = new Paint();
+
+        counter_paint.setColor(Color.parseColor("#ffffff"));
+        counter_paint.setTextSize(60);
+        counter_paint.setAntiAlias(true);
+        counter_paint.setTypeface(tf_stem_bold);
         canvas.drawText(
-                "" + days, (int)(82.0 * dp), (int) (65.0 * dp), paint
+                days + " " +
+                        Global.getPluralQuantityString(
+                                context.getApplicationContext(),
+                                R.plurals.days_without_count,
+                                Global.getEndNumberFromLong(days)
+                        ),
+                26, 90, counter_paint
+        );
+
+        Paint branding_paint = new Paint();
+
+        branding_paint.setColor(Color.parseColor("#38ffffff"));
+        branding_paint.setTextSize(40);
+        branding_paint.setAntiAlias(true);
+        branding_paint.setTypeface(tf_tahoma_bold);
+        canvas.drawText(
+                "daniel",
+                240, 76, branding_paint
+        );
+        canvas.drawText(
+                "myslivets",
+                260, 107, branding_paint
         );
 
         views.setImageViewBitmap(R.id.widget_frame, bmp);
-
-        views.setTextViewText(
-                R.id.widget_timer_days_count_label,
-                context.getResources().getQuantityString(
-                        R.plurals.days_without_count,
-                        Global.getEndNumberFromLong(days)
-                )
-        );
 
         // Instruct the widget manager to update the widget
         appWidgetManager.updateAppWidget(appWidgetId, views);
@@ -62,7 +112,7 @@ public class TimerWidget extends AppWidgetProvider {
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         // There may be multiple widgets active, so update all of them
-        for (int appWidgetId : appWidgetIds) {
+            for (int appWidgetId : appWidgetIds) {
             updateAppWidget(context, appWidgetManager, appWidgetId);
         }
     }

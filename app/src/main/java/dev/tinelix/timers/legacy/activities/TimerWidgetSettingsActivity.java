@@ -75,7 +75,7 @@ public class TimerWidgetSettingsActivity extends Activity {
         if (titleValue != null) {
             return titleValue;
         } else {
-            return context.getString(R.string.appwidget_text);
+            return String.format("%s_%s", context.getString(R.string.appwidget_text), appWidgetId);
         }
     }
 

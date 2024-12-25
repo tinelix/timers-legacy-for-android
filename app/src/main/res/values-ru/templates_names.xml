@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Templates names !-->
+    <string name="new_year">Новый год</string>
+    <string name="beginning_of_winter">Начало зимы</string>
+    <string name="beginning_of_spring">Начало весны</string>
+    <string name="beginning_of_summer">Начало лета</string>
+    <string name="beginning_of_autumn">Начало осени</string>
+    <string name="beginning_of_year">Начало года</string>
+</resources>

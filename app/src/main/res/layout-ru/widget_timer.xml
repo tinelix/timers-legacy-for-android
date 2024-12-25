@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="232dp"
+    android:layout_width="318dp"
     android:layout_height="100dp"
     android:padding="@dimen/widget_margin">
 
@@ -17,50 +17,15 @@
         android:layout_centerInParent="true"
         android:scaleType="center" />
 
-    <TextView
-        android:id="@+id/widget_timer_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/appwidget_text"
-        android:singleLine="true"
-        android:text="@string/appwidget_text"
-        android:textColor="#ffffff"
-        android:textSize="12sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/widget_timer_days_count_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+    <ImageView
+        android:id="@+id/myslivets_logo"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="14dp"
-        android:layout_marginRight="16dp"
-        android:shadowDx="10"
-        android:shadowDy="10"
-        android:shadowRadius="12"
-        android:singleLine="true"
-        android:text="days"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/start_of_counter2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/widget_timer_title"
-        android:layout_centerVertical="false"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="32dp"
-        android:singleLine="true"
-        android:text="@string/days_counter_elapsed_start_of"
-        android:textColor="#ffffff" />
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:src="@drawable/myslivets_logo_white" />
 
 </RelativeLayout>

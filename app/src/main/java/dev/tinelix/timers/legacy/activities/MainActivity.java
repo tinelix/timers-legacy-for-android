@@ -70,7 +70,9 @@ public class MainActivity extends Activity {
         };
         appendTimerItems();
         if(Build.VERSION.SDK_INT < Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            ColorDrawable black_transparent_divider = new ColorDrawable(this.getResources().getColor(R.color.black_transparent40));
+            ColorDrawable black_transparent_divider = new ColorDrawable(
+                    this.getResources().getColor(R.color.black_transparent40)
+            );
             timersListView.setDivider(black_transparent_divider);
         }
     }

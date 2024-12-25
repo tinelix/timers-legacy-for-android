@@ -1,3 +1,5 @@
 .gradle/3.3
 .idea
 build/android-profile
+app/build
+build/intermediates/dex-cache

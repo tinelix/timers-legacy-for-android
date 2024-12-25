@@ -62,7 +62,7 @@ public class TimersManager {
         for (File prefs_file : prefs_files) {
             int start_of_ext = (prefs_file.getName().length() - 4);
             String pref_name = prefs_file.getName().substring(0, (prefs_file.getName().length() - 4));
-            if (!pref_name.startsWith(package_name + "_preferences")) {
+            if (!pref_name.startsWith(package_name)) {
                 SharedPreferences prefs = ctx.getSharedPreferences(pref_name, 0);
                 file_extension = prefs_file.getName().substring(start_of_ext);
                 if (file_extension.contains(".xml") && file_extension.length() == 4) {
